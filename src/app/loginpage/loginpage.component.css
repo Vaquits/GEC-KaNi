@@ -1,0 +1,10 @@
+#borde {
+  margin: auto;
+  width: 400px;
+  height: auto;
+  padding: 20px 20px 20px 20px;
+  border: 1px solid #10b8c7;
+  background-color: #ffffff;
+  color: #848582;
+  border-radius: 15px;
+}

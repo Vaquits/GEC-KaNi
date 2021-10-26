@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gec-kani"
+  },
+  "targets": {
+    "gec-kani": {
+      "hosting": {
+        "GEC-KaNi": [
+          "gec-kani"
+        ]
+      }
+    }
+  }
+}

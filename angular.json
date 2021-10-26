@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -94,9 +94,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/bootstrap.min.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "GEC-KaNi:build:production",
+            "firebaseProject": "gec-kani",
+            "firebaseHostingSite": "gec-kani"
           }
         }
       }
