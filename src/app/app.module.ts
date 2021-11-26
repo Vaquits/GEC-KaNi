@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -13,6 +14,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { ListaCosasComponent } from './components/lista-cosas/lista-cosas.component';
 import { NuevaCosaComponent } from './components/nueva-cosa/nueva-cosa.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormularioComponent } from './components/formulario/formulario.component';
+import { FormularioParticipantesComponent } from './components/formulario-participantes/formulario-participantes.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 // Copy the firebaseConfig from your created project on the firebase console. Here, click on the
 //project name and then on the project dashboard, click on Add firebase to your web app.
 //Replace the values below with yours, values below will not work for you because I have removed some
@@ -25,6 +32,12 @@ const firebaseConfig = {
   messagingSenderId: "543014582806",
   appId: "1:543014582806:web:8f26cb708d4615a7da1337"
 };
+
+const appRoutes: Routes = [
+  { path: 'formulario', component: FormularioComponent},
+  { path: 'formulario-participantes', component: FormularioParticipantesComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +49,9 @@ const firebaseConfig = {
     ProfileComponent,
     ListaCosasComponent,
     NuevaCosaComponent,
-    NavbarComponent
+    NavbarComponent,
+    FormularioComponent,
+    FormularioParticipantesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +59,11 @@ const firebaseConfig = {
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
